@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState } from 'react';
-import { FiMenu, FiX, FiSearch, FiUser, FiHome, FiUsers, FiSettings } from 'react-icons/fi';
+import { FiMenu, FiX, FiSearch, FiUser, FiHome, FiUsers, FiSettings, FiPlus } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white text-gray-700 shadow-md">
+    <nav className="bg-white text-gray-700 shadow-md sticky top-0">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Brand/Logo */}
         <div className="text-2xl font-bold text-blue-600">
@@ -36,23 +36,22 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
-          <li className="flex items-center space-x-2">
+          <li className="flex items-center space-x-1">
             <FiHome />
             <a href="/" className="hover:text-blue-600">Home</a>
           </li>
-          <li className="flex items-center space-x-2">
-            <FiHome />
-            <a href="/add-post" className="hover:text-blue-600">Add</a>
+          <li className="flex items-center space-x-1">
+            <FiPlus />
+            <a href="/post-add" className="hover:text-blue-600">Add</a>
           </li>
-         
-          {/*<li className="flex items-center space-x-2">
+          <li className="flex items-center space-x-1">
             <FiUsers />
-            <a href="/users" className="hover:text-blue-600">Edit</a>
+            <a href="/users" className="hover:text-blue-600">Users</a>
           </li>
-          <li className="flex items-center space-x-2">
+          <li className="flex items-center space-x-1">
             <FiSettings />
             <a href="/settings" className="hover:text-blue-600">Settings</a>
-          </li>*/}
+          </li>
         </ul>
 
 
@@ -85,17 +84,13 @@ const Navbar = () => {
             <li>
               <a href="/" className="hover:text-blue-600">Home</a>
             </li>
-            {/*<li>
+            <li>
               <a href="/users" className="hover:text-blue-600">Users</a>
             </li>
             <li>
               <a href="/settings" className="hover:text-blue-600">Settings</a>
-            </li>*/}
-            <li>
-              <a href="/add-book" className="bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-lg">
-                + Create
-              </a>
             </li>
+           
           </ul>
 
           {/* Mobile Search Bar */}
