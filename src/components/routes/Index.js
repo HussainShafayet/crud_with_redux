@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
 import {Layout} from '../layouts';
 import {AddPost, EditPost, PostsView, ViewPost} from '../features/posts';
+import {Users} from '../features/users';
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
             <Route path='/post-edit/:postId' element={<EditPost />} />
             <Route path='/post/:postId' element={<ViewPost />} />
             <Route path='/posts' element={<PostsView />} />
+            <Route path='/users' element={<Users />} />
 
             {/*Not Found*/}
             <Route path='*' element={<NotFound />} />
